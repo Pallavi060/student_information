@@ -1,0 +1,58 @@
+<style>
+  .table-container {
+    max-height: 400px; 
+    overflow-y: auto; 
+  }
+
+  table {
+    border: 1px solid black;
+    width: 100%;
+  }
+
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+  }
+
+  th {
+    background-color: lightblue;
+    color: black;
+  }
+
+  td {
+    background-color: lightblue;
+    color: black;
+  }
+</style>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Roll no</th>
+      <th colspan="2">Subject</th>
+      <th>Total</th>
+      <th>Grade</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>Math</th>
+      <th>Science</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of students">
+      <td>{{ student.name }}</td>
+      <td>{{ student.rollNumber }}</td>
+      <td>{{ student.subjects.mathMarks }}</td>
+      <td>{{ student.subjects.scienceMarks }}</td>
+      <td>{{ student.subjects.mathMarks + student.subjects.scienceMarks }}</td>
+      <td>{{ student.grade }}</td>
+    </tr>
+  </tbody>
+</table>
+
